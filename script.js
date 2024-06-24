@@ -5,7 +5,12 @@ let checkbox = document.querySelector("#checkbox");
 let submit = document.querySelector("#submit");
 let existing = document.querySelector("#existing");
 
-
+if(localStorage.getItem("username")&&localStorage.getItem("password")){
+    existing.style.display="block";
+}
+else{
+    existing.style.display="none";
+}
 
 
 function showOutput(e) {
@@ -15,11 +20,11 @@ function showOutput(e) {
         localStorage.setItem("username",username.value);
         localStorage.setItem("password",password.value);
         existing.style.display="block";
-
     }
     else if(checkbox.checked==false &&username.value&&password.value){
         localStorage.clear();
-        existing.style.display="none";
+    existing.style.display="none";
+        
     }
     if (username.value&&password.value){
         alert(  "Logged in as "+username.value)
