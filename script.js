@@ -22,8 +22,8 @@ function showOutput(e) {
         existing.style.display="block";
     }
     else if(checkbox.checked==false &&username.value&&password.value){
-		localStorage.removeItem("username",username.value);
-        localStorage.removeItem("password",password.value);
+		localStorage.removeItem("username");
+        localStorage.removeItem("password");
     existing.style.display="none";
         
     }
